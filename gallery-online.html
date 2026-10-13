@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Photographs, 2023–2026</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&display=swap">
+<style>
+:root{--bg:#efebe3;--fg:#1d1b18;--mut:#78726a;--line:#cfc8bb;--acc:#b3401e;--serif:Fraunces,Georgia,serif;--sans:system-ui,-apple-system,"Segoe UI",Helvetica,Arial,sans-serif;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#161412;--fg:#ebe5da;--mut:#968f84;--line:#363129;--acc:#e0724a}}
+:root[data-theme="dark"]{--bg:#161412;--fg:#ebe5da;--mut:#968f84;--line:#363129;--acc:#e0724a}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{background:var(--bg);color:var(--fg);font:16px/1.55 var(--sans);overflow-x:hidden}
+a,button{color:inherit;font:inherit}
+button{background:none;border:0;cursor:pointer}
+.wrap{width:min(1180px,90%);margin:0 auto}
+nav{display:flex;justify-content:space-between;align-items:baseline;gap:20px;flex-wrap:wrap;padding:26px 0;border-bottom:1px solid var(--line);font-size:14px}
+nav b{font-family:var(--serif);font-weight:600;font-size:17px}
+.filters{display:flex;gap:22px;flex-wrap:wrap}
+.fb{color:var(--mut);padding:2px 0;border-bottom:1.5px solid transparent;transition:color .2s,border-color .2s}
+.fb:hover{color:var(--fg)}.fb.active{color:var(--fg);border-color:var(--acc)}
+.fb sup{font-size:10px;margin-left:3px;color:var(--mut)}
+.intro{padding:72px 0 56px;display:grid;grid-template-columns:1.6fr 1fr;gap:48px;align-items:end}
+h1{font-family:var(--serif);font-weight:400;font-size:clamp(2.3rem,6vw,4.4rem);line-height:1.04;letter-spacing:-.025em}
+h1 i{color:var(--acc)}
+.intro p{color:var(--mut);max-width:34ch;font-size:15px}
+.cols{columns:3;column-gap:28px;padding-bottom:70px}
+figure{break-inside:avoid;margin-bottom:34px;opacity:0;transform:translateY(14px);transition:opacity .7s ease,transform .7s ease}
+figure.in{opacity:1;transform:none}
+figure.out{opacity:0;transform:none;transition-duration:.2s}
+figure.hidden{display:none}
+.ph{display:block;width:100%;overflow:hidden;cursor:zoom-in;background:#d8d1c3;position:relative}
+.ph::after{content:"";position:absolute;inset:0;background:url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='.5'/%3E%3C/svg%3E");opacity:.09;mix-blend-mode:multiply;pointer-events:none}
+.ph img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .8s cubic-bezier(.2,.7,.2,1)}
+.ph:hover img{transform:scale(1.035)}
+.r1{aspect-ratio:4/5}.r2{aspect-ratio:1/1}.r3{aspect-ratio:3/2}.r4{aspect-ratio:4/3}
+figcaption{display:grid;grid-template-columns:auto 1fr auto;gap:4px 12px;align-items:baseline;padding-top:10px;font-size:14px}
+.n{font:11px ui-monospace,Menlo,Consolas,monospace;color:var(--mut)}
+.t{font-family:var(--serif);font-size:17px}
+.sv{font-size:12px;color:var(--mut);text-decoration:underline;text-underline-offset:3px}
+.sv.on{color:var(--acc)}
+.nt{grid-column:2/4;color:var(--mut);font-size:13.5px;line-height:1.45}
+footer{border-top:1px solid var(--line);padding:22px 0 34px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;color:var(--mut);font-size:13px}
+.lb{position:fixed;inset:0;z-index:50;background:#12100e;color:#ebe5da;display:flex;flex-direction:column;opacity:0;visibility:hidden;transition:opacity .25s,visibility .25s}
+.lb.on{opacity:1;visibility:visible}
+.top,.bot{display:flex;justify-content:space-between;align-items:center;padding:18px 24px;font-size:14px;gap:16px}
+.top{padding-top:calc(18px + env(safe-area-inset-top,0px))}.bot{padding-bottom:calc(18px + env(safe-area-inset-bottom,0px));align-items:flex-start}
+.top button,.bot button{padding:6px 2px;border-bottom:1px solid transparent}.top button:hover,.bot button:hover{border-color:currentColor}
+.view{flex:1;min-height:0;display:flex;align-items:center;justify-content:center;padding:0 24px;touch-action:pan-y}
+.view img{max-width:100%;max-height:100%;object-fit:contain;animation:fade .35s ease}
+@keyframes fade{from{opacity:0}}
+.bot h2{font-family:var(--serif);font-weight:400;font-size:20px}.bot p{color:#a39b8e;font-size:14px;max-width:48ch;margin-top:2px}
+.nav2{display:flex;gap:22px;flex:none}
+@media(max-width:900px){.cols{columns:2}.intro{grid-template-columns:1fr;gap:20px;padding-top:48px}}
+@media(max-width:540px){.cols{columns:1}.view{padding:0 10px}}
+@media(prefers-reduced-motion:reduce){*,*::before{animation:none!important;transition-duration:.01ms!important}figure{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<nav><b>Photographs</b><div class="filters" id="filters"></div></nav>
+<section class="intro">
+<h1>Places I keep <i>going back to</i></h1>
+<p>A few years of pictures, mostly taken early in the morning. I wrote a line under each one so I remember why it's here.</p>
+</section>
+<div class="cols" id="grid"></div>
+<footer><span>2023–2026</span><span>Arrow keys work in the viewer</span></footer>
+</div>
+<div class="lb" id="lb" role="dialog" aria-modal="true">
+<div class="top"><span id="cn"></span><button id="cl">Close</button></div>
+<div class="view" id="view"></div>
+<div class="bot"><div><h2 id="ct"></h2><p id="cc"></p></div><div class="nav2"><button id="pv">Previous</button><button id="nx">Next</button></div></div>
+</div>
+<script>
+// ---------- Procedural artwork (no external images needed) ----------
+function rng(s){return()=>(s=(s*16807)%2147483647)/2147483647}
+function art(type,seed,hue){
+  const r=rng(seed*997+13),W=800,H=600,h=hue;
+  const c=(dh,s,l)=>`hsl(${(h+dh)%360} ${s}% ${l}%)`;
+  let g=`<defs><linearGradient id="s" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${c(0,38,type==='city'?16:66)}"/><stop offset="1" stop-color="${c(30,42,type==='city'?36:80)}"/></linearGradient></defs><rect width="800" height="600" fill="url(#s)"/>`;
+  g+=`<circle cx="${150+r()*500}" cy="${120+r()*100}" r="${type==='city'?50:70}" fill="${c(60,95,type==='city'?88:92)}" opacity=".9"/>`;
+  if(type==='city'){
+    for(let i=0;i<3;i++){let x=-20,l=22-i*5;while(x<820){const w=40+r()*70,bh=120+r()*(260-i*50);
+      g+=`<rect x="${x}" y="${600-bh-i*20}" width="${w}" height="${bh+i*20}" fill="${c(-20,40,l)}"/>`;
+      if(i===0)for(let k=0;k<14;k++)if(r()>.55)g+=`<rect x="${x+6+r()*(w-16)}" y="${600-bh+r()*(bh-20)}" width="6" height="8" fill="hsl(48 100% 70%)" opacity=".85"/>`;
+      x+=w+4}}
+  }else if(type==='nature'){
+    for(let i=0;i<4;i++){let p=`0,600`,x=0;while(x<=800){p+=` ${x},${330+i*60-r()*(150-i*20)}`;x+=70+r()*60}
+      g+=`<polygon points="${p} 800,600" fill="${c(i*12,45,48-i*10)}"/>`}
+    for(let i=0;i<16;i++){const x=r()*800,y=470+r()*110,s=.6+r()*.9;
+      g+=`<polygon points="${x},${y-70*s} ${x-24*s},${y} ${x+24*s},${y}" fill="${c(110,50,14)}"/>`}
+  }else{
+    for(let i=0;i<5;i++){let p='0,600';for(let x=0;x<=800;x+=20)p+=` ${x},${380+i*45+Math.sin(x/70+i*2+seed)*14}`;
+      g+=`<polygon points="${p} 800,600" fill="${c(-30+i*8,60,58-i*9)}" opacity=".92"/>`}
+    const bx=200+r()*400;g+=`<polygon points="${bx},330 ${bx},410 ${bx+60},410" fill="#fff"/><polygon points="${bx-8},418 ${bx+70},418 ${bx+52},440 ${bx+6},440" fill="${c(0,60,22)}"/>`;
+  }
+  return 'data:image/svg+xml;utf8,'+encodeURIComponent(`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">${g}</svg>`);
+}
+const DATA=[
+["Alpine Dawn","nature",200,"r1","Left the hut at 5. My fingers hurt for an hour."],
+["Neon Skyline","city",265,"r3","Got lost twice. The noodles afterwards were good."],
+["Coastal Drift","travel",190,"r4","Late ferry. Nobody seemed bothered."],
+["Misty Forest","nature",150,"r2","It rained the whole walk and I didn't mind."],
+["Glass District","city",215,"r1","Shot from a rooftop a stranger told me about."],
+["Harbor Light","travel",20,"r3","Last evening of the trip."],
+["Golden Ridge","nature",35,"r4","My mum likes this one. Says it looks like home."],
+["Midnight Tower","city",300,"r2","Couldn't sleep, so I walked."],
+["Sunset Sail","travel",340,"r4","A fisherman waved. I waved back."],
+["Valley Haze","nature",120,"r3","Farmer said the fog lifts by nine."],
+["Metro Pulse","city",190,"r1","Rush hour, oddly quiet."],
+["Island Hop","travel",170,"r2","Third of five islands. The one I'd go back to."]
+].map((d,i)=>{const ids=[1018,1011,1015,1020,1031,1036,1043,1050,1060,10,1039,1016],dim={r1:'800/1000',r2:'900/900',r3:'900/600',r4:'800/600'}[d[3]];
+  return {title:d[0],cat:d[1],cls:d[3],note:d[4],art:art(d[1],i+3,d[2]),src:`https://picsum.photos/id/${ids[i]}/${dim}`}});
+const fb=im=>{im.onerror=()=>{im.onerror=null;im.src=DATA.find(d=>d.title===im.alt).art}};
+const LAB={all:"All",nature:"Outdoors",city:"City",travel:"Travel"};
+const grid=document.getElementById('grid'),fl=document.getElementById('filters');
+const saved=new Set();let cur='all',vis=[...DATA],idx=0;
+DATA.forEach((d,i)=>{const f=document.createElement('figure');d.el=f;
+  f.innerHTML=`<a class="ph ${d.cls}" href="#" aria-label="Open ${d.title}"><img src="${d.src}" alt="${d.title}" loading="lazy" onerror="this.onerror=null;this.src=DATA[${i}].art"></a><figcaption><span class="n">${String(i+1).padStart(2,'0')}</span><span class="t">${d.title}</span><button class="sv">Save</button><span class="nt">${d.note}</span></figcaption>`;
+  f.querySelector('.ph').onclick=e=>{e.preventDefault();open(d)};
+  const sv=f.querySelector('.sv');sv.onclick=()=>{saved.has(i)?saved.delete(i):saved.add(i);sv.classList.toggle('on',saved.has(i));sv.textContent=saved.has(i)?'Saved':'Save'};
+  grid.appendChild(f)});
+Object.keys(LAB).forEach(c=>{const b=document.createElement('button');b.className='fb'+(c==='all'?' active':'');b.dataset.f=c;
+  b.innerHTML=LAB[c]+'<sup>'+(c==='all'?DATA.length:DATA.filter(d=>d.cat===c).length)+'</sup>';b.onclick=()=>filter(c);fl.appendChild(b)});
+function reveal(l){l.forEach((d,k)=>{d.el.classList.remove('out','in');setTimeout(()=>d.el.classList.add('in'),40+k*50)})}
+function filter(c){if(c===cur)return;cur=c;fl.querySelectorAll('.fb').forEach(b=>b.classList.toggle('active',b.dataset.f===c));
+  DATA.forEach(d=>d.el.classList.add('out'));
+  setTimeout(()=>{DATA.forEach(d=>d.el.classList.toggle('hidden',!(c==='all'||d.cat===c)));vis=DATA.filter(d=>!d.el.classList.contains('hidden'));reveal(vis)},210)}
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){setTimeout(()=>e.target.classList.add('in'),40);io.unobserve(e.target)}}),{threshold:.1});
+DATA.forEach(d=>io.observe(d.el));
+const lb=document.getElementById('lb'),view=document.getElementById('view');
+function show(){const d=vis[idx];view.innerHTML='';const im=new Image();fb(im);im.src=d.src;im.alt=d.title;view.appendChild(im);
+  ct.textContent=d.title;cc.textContent=d.note;cn.textContent=(idx+1)+' of '+vis.length}
+function open(d){idx=vis.indexOf(d);show();lb.classList.add('on');document.body.style.overflow='hidden'}
+function go(n){idx=(idx+n+vis.length)%vis.length;show()}
+function close(){lb.classList.remove('on');document.body.style.overflow=''}
+cl.onclick=close;nx.onclick=()=>go(1);pv.onclick=()=>go(-1);
+addEventListener('keydown',e=>{if(!lb.classList.contains('on'))return;if(e.key==='Escape')close();if(e.key==='ArrowRight')go(1);if(e.key==='ArrowLeft')go(-1)});
+let sx=null;view.addEventListener('pointerdown',e=>sx=e.clientX);view.addEventListener('pointerup',e=>{if(sx===null)return;const dx=e.clientX-sx;sx=null;if(Math.abs(dx)>50)go(dx<0?1:-1)});
+</script>
+</body>
+</html>
